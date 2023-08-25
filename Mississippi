@@ -1,0 +1,21 @@
+def most_frequent(input_string):
+    char_frequency = {}
+    
+    # Count the frequency of each character
+    for char in input_string:
+        if char.isalpha():
+            char = char.lower()
+            char_frequency[char] = char_frequency.get(char, 0) + 1
+    
+    # Sort characters by frequency in decreasing order
+    sorted_chars = sorted(char_frequency.items(), key=lambda x: x[1], reverse=True)
+    
+    # Print the characters and their frequencies
+    for char, frequency in sorted_chars:
+        print(f"{char} = {frequency:02d}")
+
+try:
+    input_string = input("Please enter a string: ")
+    most_frequent(input_string)
+except Exception as e:
+    print("An error occurred:", e)
