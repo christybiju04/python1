@@ -1,0 +1,11 @@
+def print_positive_numbers(numbers):
+    positive_numbers = [num for num in numbers if num > 0]
+    return positive_numbers
+
+try:
+    input_str = input("Input: list = ")
+    numbers = [int(x.strip()) for x in input_str.split(',')]
+    positive_numbers = print_positive_numbers(numbers)
+    print("Output:", positive_numbers)
+except Exception as e:
+    print("An error occurred:", e)
